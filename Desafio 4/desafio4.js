@@ -1,4 +1,3 @@
-// Tienda de ropa
 class Camiseta {
     constructor(nombre, cantidad, precio){
         this.nombre = nombre.toUpperCase();
@@ -42,11 +41,10 @@ function precioTotal(productos) {
 }
 
 function main() {
-    mostrarProductos(productos);
-    console.log("El precio total de los productos es: " + "$" + precioTotal(productos))
+    console.log("El precio total de los productos es: " + "$" + precioTotal(listaProductos))
 }
 
-productos = []
+const listaProductos = [];
 
 let op = parseInt(prompt("Indique que producto desea registrar: \n1. Camiseta \n2. Pantalon \n3. Gorro \n0. Para salir"))
 
@@ -56,7 +54,7 @@ while (op != 0){
         let precio = parseInt(prompt("Ingrese el precio:"));
         let cantidad = parseInt(prompt("Ingrese la cantidad:"));
         let productoARegistrar = new Camiseta(nombre,cantidad,precio);
-        productos.push(productoARegistrar)
+        listaProductos.push(productoARegistrar)
         op = parseInt(prompt("Indique que producto desea registrar: \n1. Camiseta \n2. Pantalon \n3. Gorro \n0. Para salir"))
 
     }else if (op == 2){
@@ -64,7 +62,7 @@ while (op != 0){
         let precio = parseInt(prompt("Ingrese el precio:"));
         let cantidad = parseInt(prompt("Ingrese la cantidad"));
         let productoARegistrar = new Pantalon(nombre,cantidad,precio);
-        productos.push(productoARegistrar)
+        listaProductos.push(productoARegistrar)
         op = parseInt(prompt("Indique que producto desea registrar: \n1. Camiseta \n2. Pantalon \n3. Gorro \n0. Para salir"))
         
     }else if (op == 3){
@@ -72,7 +70,7 @@ while (op != 0){
         let precio = parseInt(prompt("Ingrese el precio:"));
         let cantidad = parseInt(prompt("Ingrese la cantidad"));
         let productoARegistrar = new Gorro(nombre,cantidad,precio);
-        productos.push(productoARegistrar)
+        listaProductos.push(productoARegistrar)
         op = parseInt(prompt("Indique que producto desea registrar: \n1. Camiseta \n2. Pantalon \n3. Gorro \n0. Para salir"))
         
     }else{
@@ -82,4 +80,23 @@ while (op != 0){
     }
 }
 
+const contenedorProductos = document.getElementById("contenedor-productos");
+
+for (const producto of listaProductos) {
+    let column = document.createElement("div");
+    column.className = "col-md-4 mt-3 ";
+    column.id = `columna-${producto.id}`;
+    column.innerHTML = `
+    <div class="card">
+        <div class="card-body">
+        <p class="card-text">Nombre: <b>${producto.nombre}</b></p>
+        <p class="card-text">Precio: <b>${producto.precio}</b></p>
+        <p class="card-text">Cantidad: <b>${producto.cantidad}</b></p>
+        </div>
+    </div>`;
+
+    contenedorProductos.append(column);
+}
+
 main();
+
