@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Segunda Entrega Proyecto - JavaScript</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous"
+    />
+    </head>
+    <body>
+    <div class="container mt-3">
+        <div class="row">
+        <div class="col-md-6 pt-3">
+            <h3>Registradora de Productos</h3>
+            <form id="formulario">
+            <div class="mb-3">
+                <label class="form-label">Nombre Producto:</label>
+                <input
+                type="text"
+                class="form-control"
+                id="inputNombreProducto"
+                />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Cantidad:</label>
+                <input type="number" class="form-control" id="inputCantidad" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Precio Unidad:</label>
+                <input
+                type="number"
+                class="form-control"
+                id="inputPrecio"
+                />
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+            </form>
+        </div>
+        <div class="col-md-6 pt-3">
+            <table id="tablaProductos" class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <td>Nombre Producto</td>
+                    <td>Cantidad</td>
+                    <td>Precio Unidad</td>
+                </tr>
+                </th>
+                <tbody></tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="container py-3">
+        <div class="d-grid gap-2">
+            <button class="btn btn-secondary" id="btnProductos">Total Productos</button>
+            <button class="btn btn-secondary" id="btnPrecio">Valor Total</button>
+        </div>
+    </div>
+        
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"
+    ></script>
+    <script src="./desafio6.js"></script>
+    </body>
+</html>
