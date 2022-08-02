@@ -1,0 +1,6 @@
+[
+    {"nombre":"Empanada de Churrasco Queso", "precio":3, "id":1},
+    {"nombre":"Empanada Champiñon 2 Quesos", "precio":3, "id":2},
+    {"nombre":"Empanada de Pino", "precio":3, "id":3},
+    {"nombre":"Empanada de Pollo", "precio":3, "id":4}
+]
